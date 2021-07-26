@@ -1,0 +1,161 @@
+{
+  "intents": [
+    {
+      "intent": "welcome",
+      "examples": [
+        {
+          "text": "Good Afternoon"
+        },
+        {
+          "text": "Good evening"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "Good night"
+        },
+        {
+          "text": "hello"
+        },
+        {
+          "text": "hey"
+        },
+        {
+          "text": "hi"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "sys-currency",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-date",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-percentage",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-time",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "welcome",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "hello",
+          "synonyms": [
+            "hallo",
+            "hay",
+            "hellw"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "hey",
+          "synonyms": [
+            "hai",
+            "hay",
+            "hy"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "hello"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "Welcome",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "conditions": "",
+      "dialog_node": "node_3_1627277769751",
+      "previous_sibling": "Anything else"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "welcome to Ferial Assistant ,How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Personal welcome",
+  "language": "en",
+  "description": ""
+}
